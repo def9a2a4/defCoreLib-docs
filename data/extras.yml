@@ -1,0 +1,41 @@
+# Recipes that are defined in Java code, not in the block YAML files, and so are not
+# discoverable by scripts/generate_catalog.py from the resource YAMLs alone.
+#
+# Keep this in sync by hand when the corresponding Java changes:
+#   - large_banner   -> LargeBannerRecipes.java  (constructor: shape WWW/WBW/WWW, normal banner center)
+#   - huge_banner    -> LargeBannerRecipes.java  (same shape, large_banner center; tier in modifyResult)
+# (The rotation wrench + slime glue are now real YAML custom-items — auto-discovered, not listed here.)
+#
+# Schema mirrors a generated catalog item (see generate_catalog.py): name/lore may use
+# &-color codes; `icon.material` renders the vanilla item texture instead of a head.
+
+items:
+  - namespace: corelib
+    id: large_banner
+    name: "&fLarge Banner"
+    lore:
+      - "&7A 3x larger banner."
+      - "&7Place a banner in the center, surround with wool."
+    icon: { material: WHITE_BANNER }
+    recipes:
+      - type: shaped
+        pattern: ["WWW", "WBW", "WWW"]
+        key:
+          W: { tag: wool }
+          B: { tag: banner }
+        amount: 1
+
+  - namespace: corelib
+    id: huge_banner
+    name: "&fHuge Banner"
+    lore:
+      - "&7A 9x larger banner."
+      - "&7Place a large banner in the center, surround with wool."
+    icon: { material: WHITE_BANNER }
+    recipes:
+      - type: shaped
+        pattern: ["WWW", "WBW", "WWW"]
+        key:
+          W: { tag: wool }
+          B: { block: corelib:large_banner }
+        amount: 1
