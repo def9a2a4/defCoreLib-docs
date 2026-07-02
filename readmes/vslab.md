@@ -11,6 +11,7 @@ See [the catalog of vertical slabs](https://def9a2a4.github.io/defCoreLib-docs/i
 - Vertical slabs for basically every slab variant.
 - Place against any wall face
 - Crafted from just the matching horizontal slab. Craft the original slab from a vertical slab too
+- Purely server-side paper plugin, no mods or resource packs required
 
 ![Crafting a vertical slab from a horizontal slab](https://def9a2a4.github.io/defCoreLib-docs/readmes/assets/vslab/crafting.png)
 
@@ -25,6 +26,7 @@ See [the catalog of vertical slabs](https://def9a2a4.github.io/defCoreLib-docs/i
 - Issues: https://github.com/def9a2a4/defCoreLib/issues
 
 
+[![Catalog](https://def9a2a4.github.io/defCoreLib-docs/readmes/assets/vslab/catalog.png)](https://def9a2a4.github.io/defCoreLib-docs/index.html?q=slab)
 
 
 Finally, a new longest item name:
