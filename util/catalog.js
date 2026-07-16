@@ -49,9 +49,15 @@ function card(item) {
   const lore = loreLines.length
     ? `<div class="item-lore">${loreLines.map((l) => `<div class="line">${mcText(l)}</div>`).join('')}</div>`
     : '';
-  const badge = item.variants?.length
-    ? `<span class="state-badge" title="${item.variants.length} states/textures">${item.variants.length} states</span>`
-    : '';
+  // Badge counts the dominant variant group so a wood-family card reads "12 woods", not "12 states".
+  let badge = '';
+  if (item.variants?.length) {
+    const counts = new Map();
+    for (const v of item.variants) counts.set(v.group, (counts.get(v.group) || 0) + 1);
+    const dominant = [...counts.entries()].sort((a, b) => b[1] - a[1])[0][0];
+    const label = { woods: 'woods', power: 'power levels', facing: 'facings' }[dominant] || 'states';
+    badge = `<span class="state-badge" title="${item.variants.length} states/textures">${item.variants.length} ${label}</span>`;
+  }
   // Placed 3D preview (static thumbnail) for blocks that have a captured placed form.
   const placed = item.placedVariants?.length
     ? `<div class="card-3d"><div class="placed-thumb" data-thumb="${esc(item.fullId)}"></div></div>`
@@ -98,8 +104,13 @@ function render() {
     if (!its.length) continue;
     total += its.length;
 
+    // All items in a namespace section share a providing plugin (banners → BetterBanners); link it.
+    const plugin = its.find((it) => it.plugin)?.plugin;
+    const modrinth = plugin
+      ? ` <a class="section-modrinth" href="https://modrinth.com/plugin/${esc(plugin.slug)}" target="_blank" rel="noopener">Download ${esc(plugin.name)} on Modrinth ↗</a>`
+      : '';
     const section = document.createElement('section');
-    section.innerHTML = `<h2 class="section-title">${esc(nsLabel(ns))} <span class="counter inline">${its.length} items</span></h2>`;
+    section.innerHTML = `<h2 class="section-title">${esc(nsLabel(ns))} <span class="counter inline">${its.length} items</span>${modrinth}</h2>`;
     const grid = document.createElement('div');
     grid.className = 'item-grid';
     its.forEach((it) => grid.appendChild(card(it)));

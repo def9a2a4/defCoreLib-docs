@@ -273,6 +273,19 @@ a.slot { text-decoration: none; color: inherit; }
   margin-left: 4px;
 }
 .counter.inline { display: inline; margin: 0; font-size: 0.6em; color: #888; }
+.section-modrinth {
+  font-size: 0.55em;
+  vertical-align: middle;
+  margin-left: 8px;
+  padding: 3px 9px;
+  border-radius: 5px;
+  background: #1bd96a;
+  color: #0a0a0a;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.section-modrinth:hover { filter: brightness(1.1); }
 
 /* ── Vertical slabs section (compact grid) ─────────────────────────────── */
 .slab-grid {
@@ -309,6 +322,18 @@ a.slot { text-decoration: none; color: inherit; }
 .detail-icon .placeholder { color: #555; }
 .detail-icon.glint { filter: drop-shadow(0 0 6px #b46cff); }
 .detail-name { margin: 0 0 4px; color: #fff; }
+.plugin-modrinth {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 4px 10px;
+  border-radius: 5px;
+  background: #1bd96a;
+  color: #0a0a0a;
+  font-weight: 700;
+  font-size: 0.8em;
+  text-decoration: none;
+}
+.plugin-modrinth:hover { filter: brightness(1.1); }
 .detail-section { margin-top: 24px; }
 .detail-section .section-title { margin-top: 0; }
 
@@ -375,6 +400,12 @@ a.slot { text-decoration: none; color: inherit; }
 .variant-icon img { image-rendering: pixelated; max-width: 100%; max-height: 100%; }
 .variant-icon .slot-label { font-size: 11px; color: #cfcfcf; padding: 2px; word-break: break-word; }
 .variant-label { font-size: 0.82em; color: #aaa; margin-top: 4px; word-break: break-word; }
+
+/* Recipe-carrying swatches (folded wood variants): clickable, selected one highlighted. */
+.variant-clickable { cursor: pointer; }
+.variant-clickable:hover .variant-icon { border-color: #4ecca3; }
+.variant-selected .variant-icon { border-color: #4ecca3; box-shadow: 0 0 0 1px #4ecca3; }
+.variant-selected .variant-label { color: #4ecca3; }
 
 .transitions { margin-top: 14px; }
 .transition { font-size: 0.85em; color: #ccc; padding: 3px 0; display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }

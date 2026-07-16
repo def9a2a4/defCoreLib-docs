@@ -4,6 +4,8 @@ Kinetic rotation mechanisms - build power networks that drive machines, doors, a
 
 See the [items and their recipes](https://def9a2a4.github.io/defCoreLib-docs/index.html?ns=mech), or the [things you can build](https://def9a2a4.github.io/defCoreLib-docs/showcases.html).
 
+[Download on Modrinth](https://modrinth.com/plugin/mechanism)
+
 [![Windmill-driven sand generator](https://def9a2a4.github.io/defCoreLib-docs/readmes/assets/mech/mech.gif)](https://def9a2a4.github.io/defCoreLib-docs/showcase.html?id=sand_generator)
 [![Mechanisms in-game](https://def9a2a4.github.io/defCoreLib-docs/readmes/assets/mech/mech-ingame.gif)](https://def9a2a4.github.io/defCoreLib-docs/readmes/assets/mech/mech-ingame.webm)
 
@@ -19,7 +21,7 @@ shafts and gears, branch or turn corners with gears, and gate the flow with clut
 - [**Windmill**](https://def9a2a4.github.io/defCoreLib-docs/item.html?id=mech%3Awindmill) - always spinning; low power. [**Large**](https://def9a2a4.github.io/defCoreLib-docs/item.html?id=mech%3Alarge_windmill) and [**Huge**](https://def9a2a4.github.io/defCoreLib-docs/item.html?id=mech%3Ahuge_windmill) windmills produce progressively more (crafted with large/huge banners - see Requires).
 - [**Water wheel**](https://def9a2a4.github.io/defCoreLib-docs/item.html?id=mech%3Awater_wheel) - wall-mounted; spins when placed next to water.
 - [**Engine**](https://def9a2a4.github.io/defCoreLib-docs/item.html?id=mech%3Aengine) - burns fuel (coal, logs, planks, blaze rods, lava) for high power; right-click to refuel.
-- [**Redstone generator**](https://def9a2a4.github.io/defCoreLib-docs/item.html?id=mech%3Agenerator) - steady power, toggled by a redstone signal. No fuel needed, but low power and expensive.
+- [**Redstone motor**](https://def9a2a4.github.io/defCoreLib-docs/item.html?id=mech%3Aredstone_motor) - steady power, toggled by a redstone signal. No fuel needed, but low power and expensive.
 
 ## Transmission
 
@@ -35,6 +37,10 @@ shafts and gears, branch or turn corners with gears, and gate the flow with clut
 - [**Fan**](https://def9a2a4.github.io/defCoreLib-docs/item.html?id=mech%3Afan) - pushes entities and items in front of it; range scales with surplus power.
 - [**Drill**](https://def9a2a4.github.io/defCoreLib-docs/item.html?id=mech%3Adrill) - mines the blocks in front of it.
 - [**Placer**](https://def9a2a4.github.io/defCoreLib-docs/item.html?id=mech%3Aplacer) - places blocks from an attached inventory.
+
+## Power output
+
+- [**Redstone dynamo**](https://def9a2a4.github.io/defCoreLib-docs/item.html?id=mech%3Aredstone_dynamo) - the inverse of the motor: reads your rotation network's power and emits an **analog 0-15 redstone signal** (read it with a comparator against any side). Right-click to choose what it reports (total / used / unused power) and how it scales to 0-15 (clamp / mod-15 / ÷15). Transmits rotation along its axis like a shaft, and draws no power itself.
 
 ## Structures & vehicles
 
@@ -59,5 +65,7 @@ shafts and gears, branch or turn corners with gears, and gate the flow with clut
 
 ## Links
 
+- Items, recipes & showcases: https://def9a2a4.github.io/defCoreLib-docs/index.html?ns=mech
+- Download on Modrinth: https://modrinth.com/plugin/mechanism
 - Repository: https://github.com/def9a2a4/defCoreLib/
 - Issues: https://github.com/def9a2a4/defCoreLib/issues

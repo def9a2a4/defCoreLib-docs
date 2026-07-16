@@ -8,6 +8,7 @@
   "blackstone_slab": true,
   "brick_slab": true,
   "brush": false,
+  "chain": true,
   "cherry_slab": true,
   "cobbled_deepslate_slab": true,
   "cobblestone": true,
@@ -28,6 +29,7 @@
   "furnace_minecart": false,
   "golden_axe": false,
   "granite_slab": true,
+  "honey_bottle": false,
   "hopper": true,
   "jungle_slab": true,
   "lever": true,
@@ -36,6 +38,7 @@
   "mossy_stone_brick_slab": true,
   "mud_brick_slab": true,
   "nether_brick_slab": true,
+  "oak_log": true,
   "oak_planks": true,
   "oak_slab": true,
   "oxidized_cut_copper_slab": true,
@@ -67,6 +70,7 @@
   "stone": true,
   "stone_brick_slab": true,
   "stone_slab": true,
+  "sugar": false,
   "tuff_brick_slab": true,
   "tuff_slab": true,
   "warped_slab": true,
@@ -76,5 +80,6 @@
   "waxed_oxidized_cut_copper_slab": true,
   "waxed_weathered_cut_copper_slab": true,
   "weathered_cut_copper_slab": true,
-  "white_banner": true
+  "white_banner": true,
+  "white_carpet": true
 }
