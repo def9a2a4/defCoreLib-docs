@@ -8,7 +8,7 @@ Shared core library for the [*def9a2a4*](https://def9a2a4.github.io/) plugin fam
 
 - **Custom-block engine** - YAML-driven player-head blocks with states, redstone behavior, particles, light, storage, and animated display entities. In particular, the use of custom heads and display entities allows cool visuals ***without any mods or resource packs!***
 - **Custom items & heads, recipe registration, and persistence** (chunk scan + self-healing) that companion plugins reuse instead of reimplementing.
-- **Mechanism engine** - turns groups of blocks into moving display entities + colliders: glue-based doors/drawbridges and mechanism minecarts.
+- **Mechanism engine** - turns groups of blocks into moving display entities + colliders: glue-based doors/drawbridges and mechanical minecarts.
 - **Recipe gating** - companion plugins switch their content's recipes on by namespace, so installing one adds a coherent, craftable feature set.
 - ~20 **command-only** demo blocks (candles, redstone/binary displays, storage barrels, alarms, spinning/pulsing decorations) - grab them with `/defcorelib give`. Not meant to be useful, just there for testing the functionality.
 
@@ -18,9 +18,10 @@ DefCoreLib is a dependency other plugins install alongside:
 
 - **[VerticalSlabs](https://github.com/def9a2a4/defCoreLib/blob/main/docs/readmes/vslab.md)** - vertical slabs
 - **[BetterBanners](https://github.com/def9a2a4/defCoreLib/blob/main/docs/readmes/bbanners.md)** - flag banners + large/huge banners
-- **[Mechanism](https://github.com/def9a2a4/defCoreLib/blob/main/docs/readmes/mech.md)** - rotation mechanisms, glue, mechanism minecarts
+- **[Mechanism](https://github.com/def9a2a4/defCoreLib/blob/main/docs/readmes/mech.md)** - rotation mechanisms, glue, mechanical minecarts
 - **[RedstoneDisplays](https://github.com/def9a2a4/defCoreLib/blob/main/docs/readmes/redstonedisplays.md)** - redstone power indicator heads
 - **[Pipes](https://github.com/def9a2a4/defCoreLib/blob/main/docs/readmes/pipes.md)** - item-transport pipes
+- **[BetterMinecarts](https://github.com/def9a2a4/defCoreLib/blob/main/docs/readmes/bmc.md)** - self-driving minecart trains, fuel carts, and junction/controller/destructor rails
 
 ## Gallery
 
@@ -31,6 +32,7 @@ DefCoreLib is a dependency other plugins install alongside:
 | [Mechanism](https://github.com/def9a2a4/defCoreLib/blob/main/docs/readmes/mech.md) | <img src="https://def9a2a4.github.io/defCoreLib-docs/readmes/assets/mech/mech.gif" width="220"> <img src="https://def9a2a4.github.io/defCoreLib-docs/readmes/assets/mech/mech-ingame.gif" width="220"> <img src="https://def9a2a4.github.io/defCoreLib-docs/readmes/assets/mech/catalog-1.png" width="220"> |
 | [RedstoneDisplays](https://github.com/def9a2a4/defCoreLib/blob/main/docs/readmes/redstonedisplays.md) | <img src="https://def9a2a4.github.io/defCoreLib-docs/readmes/assets/rsd/indicators-wall.png" width="220"> <img src="https://def9a2a4.github.io/defCoreLib-docs/readmes/assets/rsd/indicators-lectern.png" width="220"> |
 | [Pipes](https://github.com/def9a2a4/defCoreLib/blob/main/docs/readmes/pipes.md) | <img src="https://def9a2a4.github.io/defCoreLib-docs/readmes/assets/pipes/demo-1.png" width="220"> <img src="https://def9a2a4.github.io/defCoreLib-docs/readmes/assets/pipes/demo-2.png" width="220"> |
+| [BetterMinecarts](https://github.com/def9a2a4/defCoreLib/blob/main/docs/readmes/bmc.md) | _preview coming soon_ <!-- <img src="https://def9a2a4.github.io/defCoreLib-docs/readmes/assets/bmc/hero.gif" width="220"> <img src="https://def9a2a4.github.io/defCoreLib-docs/readmes/assets/bmc/catalog.png" width="220"> --> |
 
 ## Commands
 

@@ -7,7 +7,7 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { loadSkin, skullMesh } from './head3d.js';
-import { buildBlockMesh, fallbackBox, texturesSettled } from './blockmodel.js';
+import { buildBlockMesh, fallbackBox, fluidBox, texturesSettled } from './blockmodel.js';
 
 let MANIFEST = null;
 async function manifest() {
@@ -25,6 +25,20 @@ function canonical(ref) {
   if (n.endsWith('_banner') || n === 'banner') return 'white_banner';
   if (n === 'iron_chain') return 'chain';
   return n;
+}
+
+// Fluids have no vendored block model (models-manifest marks them false); render as tinted
+// translucent cubes. Water color is the vanilla map/tint blue.
+const FLUIDS = { water: 0x3f76e4, lava: 0xd45a12 };
+
+// Fluid surface height from the ref's [level=N] blockstate: 0 = still source (14/16), 1-7 flowing
+// (each step 2/16 lower, floored at 2/16), ≥8 falling (full column). No level → source height.
+function fluidHeight(ref) {
+  const m = /\blevel=(\d+)/.exec(String(ref));
+  if (!m) return 14 / 16;
+  const level = Number(m[1]);
+  if (level === 0 || level >= 8) return 14 / 16;
+  return Math.max(2, 14 - 2 * level) / 16;
 }
 
 function makeViewer(container, { dist = 3.4, target = [0, 0, 0] } = {}) {
@@ -61,6 +75,7 @@ async function buildDisplayObject(de, models) {
   // BlockDisplays read back corner-origin; ItemDisplays read back centered.
   const centered = de.kind !== 'block';
   const id = canonical(de.ref);
+  if (id in FLUIDS) return fluidBox(FLUIDS[id], { centered, height: fluidHeight(de.ref) });
   if (models[id]) {
     try { return await buildBlockMesh(id, { centered }); }
     catch { return fallbackBox(0xcccccc, { centered }); }

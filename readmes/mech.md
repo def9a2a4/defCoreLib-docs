@@ -41,12 +41,13 @@ shafts and gears, branch or turn corners with gears, and gate the flow with clut
 ## Power output
 
 - [**Redstone dynamo**](https://def9a2a4.github.io/defCoreLib-docs/item.html?id=mech%3Aredstone_dynamo) - the inverse of the motor: reads your rotation network's power and emits an **analog 0-15 redstone signal** (read it with a comparator against any side). Right-click to choose what it reports (total / used / unused power) and how it scales to 0-15 (clamp / mod-15 / ÷15). Transmits rotation along its axis like a shaft, and draws no power itself.
+- [**Throttle lever**](https://def9a2a4.github.io/defCoreLib-docs/item.html?id=mech%3Athrottle_lever) - a hand-set **analog 0-15 redstone source**, no rotation network needed. Right-click to raise the output, sneak-right-click to lower it; the lever handle tilts to show the strength. Powers adjacent redstone directly (dust, lamps, and the block beneath — weighted-plate rules), and **ignores footsteps** so the signal stays put. Floor placement only.
 
 ## Structures & vehicles
 
 - [**Rotators**](https://def9a2a4.github.io/defCoreLib-docs/item.html?id=mech%3Arotator) - glue any block structure to a rotator to make swinging **doors** and **drawbridges**,
   powered by the network.
-- [**Mechanism minecarts**](https://def9a2a4.github.io/defCoreLib-docs/item.html?id=mech%3Amechanism_minecart) - carry a glued block structure along rails. Mostly decorative for now, more features coming soon!
+- [**Mechanical minecarts**](https://def9a2a4.github.io/defCoreLib-docs/item.html?id=mech%3Amechanism_minecart) - carry a glued block structure along rails. Mostly decorative for now, more features coming soon!
 - [**Glue brush**](https://def9a2a4.github.io/defCoreLib-docs/item.html?id=mech%3Aglue_item) - the authoring tool that binds blocks into a movable structure.
 
 [![Mechanism catalog](https://def9a2a4.github.io/defCoreLib-docs/readmes/assets/mech/catalog-1.png)](https://def9a2a4.github.io/defCoreLib-docs/index.html?ns=mech)
