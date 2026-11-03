@@ -1,11 +1,12 @@
 # HeadSmith
 
+[![Download on Modrinth](https://img.shields.io/badge/download-modrinth-00AF5C?style=for-the-badge&logo=modrinth&logoColor=white)](https://modrinth.com/plugin/headsmith) [![Join the Discord](https://img.shields.io/badge/discord-join-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://def9a2a4.github.io/discord.html)
+
 Thousands of decorative player-head blocks — the full alphabet, candles, chimneys, barrels, books,
 pumpkins, mini-blocks and more. Purely server-side Paper plugin, no mods or resource packs required.
 
-See [the catalog of heads](https://def9a2a4.github.io/defCoreLib-docs/index.html?ns=headsmith).
-
-[Download on Modrinth](https://modrinth.com/plugin/headsmith)
+Browse every head in the [head catalog](https://def9a2a4.github.io/HeadSmith/), or in-game with
+`/defcorelib catalog`.
 
 ## Features
 
@@ -18,8 +19,10 @@ See [the catalog of heads](https://def9a2a4.github.io/defCoreLib-docs/index.html
   smithing table, cartography, loom, stonecutter, grindstone, enchanting, ender chest); **candles**
   light with flint & steel and go out on a right-click; **chimneys** light the same way and puff
   rising campfire smoke while lit; **barrels** are 3-row storage containers.
-- **Recipes** — chalices and chimneys are cut from their base block in a **stonecutter** (e.g. any
-  cobblestone chimney from a cobblestone block); other heads have their own crafting recipes. Head
+- **Recipes** — most heads are carved in a **stonecutter**, usually from a HeadSmith mini-block
+  rather than from a vanilla one: craft a mini birch-planks block, then cut birch letters from it.
+  Chalices and chimneys come straight off their base block (any cobblestone chimney from a
+  cobblestone block). A small number of heads have ordinary shaped or shapeless recipes. Head
   recipes are kept out of the vanilla recipe book by default so they don't clutter it — reveal them
   per-player with `/headsmith recipes give`.
 - **Migration** — if you ran the old standalone HeadSmith plugin, this adopts the heads you already
@@ -30,9 +33,10 @@ See [the catalog of heads](https://def9a2a4.github.io/defCoreLib-docs/index.html
 
 | Command | Permission | Description |
 | --- | --- | --- |
-| `/headsmith give <id> [amount]` | `headsmith.give` (op) | Give a head item by id |
-| `/headsmith recipes <give\|take> [player]` | `headsmith.recipes` (default) | Reveal/hide head recipes in the recipe book |
-| `/headsmith migrate` | `headsmith.migrate` (op) | Adopt heads placed by the old standalone plugin |
+| `/headsmith help` | everyone | List the commands |
+| `/headsmith give <id> [amount] [player]` | `headsmith.give` (op) | Give a head item by id |
+| `/headsmith recipes <give\|take> [player]` | `headsmith.recipes` (everyone); `headsmith.recipes.others` (op) to target another player | Reveal/hide head recipes in the recipe book |
+| `/headsmith migrate` | `headsmith.migrate` (op) | Adopt heads placed by the old standalone plugin (sweeps loaded chunks) |
 
 ## Requires
 
@@ -43,7 +47,8 @@ the legacy migration. Without it the heads are unavailable.
 
 ## Links
 
-- Full type list & recipes: https://def9a2a4.github.io/defCoreLib-docs/index.html?ns=headsmith
+- Head catalog: https://def9a2a4.github.io/HeadSmith/
+- Full type list & recipes: in-game, `/defcorelib catalog`
 - Download on Modrinth: https://modrinth.com/plugin/headsmith
 - Repository: https://github.com/def9a2a4/defCoreLib/
 - Issues: https://github.com/def9a2a4/defCoreLib/issues

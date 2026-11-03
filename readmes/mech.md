@@ -1,10 +1,10 @@
 # Mechanism
 
+[![Download on Modrinth](https://img.shields.io/badge/download-modrinth-00AF5C?style=for-the-badge&logo=modrinth&logoColor=white)](https://modrinth.com/plugin/mechanism) [![Join the Discord](https://img.shields.io/badge/discord-join-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://def9a2a4.github.io/discord.html)
+
 Kinetic rotation mechanisms - build power networks that drive machines, doors, and vehicles. Inspired by Create mod, loosely also inspired by slimefun, pylon, and classic minecraft tekkit/technic/buildcraft/industrialcraft. *Purely server-side paper plugin, **no mods or resource packs!***
 
 See the [items and their recipes](https://def9a2a4.github.io/defCoreLib-docs/index.html?ns=mech), or the [things you can build](https://def9a2a4.github.io/defCoreLib-docs/showcases.html).
-
-[Download on Modrinth](https://modrinth.com/plugin/mechanism)
 
 [![Windmill-driven sand generator](https://def9a2a4.github.io/defCoreLib-docs/readmes/assets/mech/mech.gif)](https://def9a2a4.github.io/defCoreLib-docs/showcase.html?id=sand_generator)
 [![Mechanisms in-game](https://def9a2a4.github.io/defCoreLib-docs/readmes/assets/mech/mech-ingame.gif)](https://def9a2a4.github.io/defCoreLib-docs/readmes/assets/mech/mech-ingame.webm)
@@ -29,7 +29,7 @@ reversers, and ratchets.
 
 - [**Shaft**](https://def9a2a4.github.io/defCoreLib-docs/item.html?id=mech%3Ashaft) - carries rotation along its axis.
 - [**Gear**](https://def9a2a4.github.io/defCoreLib-docs/item.html?id=mech%3Agear) - meshes with perpendicular or in-line gears to route power around corners and branch it.
-- [**Gearbox**](https://def9a2a4.github.io/defCoreLib-docs/item.html?id=mech%3Agearbox_oak) - an omnidirectional hub: it passes power on all six faces but **not** spin direction (each side settles its own rotation). Split one input several ways, or turn a corner without a gear's counter-rotation. A wood-keyed frame block.
+- [**Gearbox**](https://def9a2a4.github.io/defCoreLib-docs/item.html?id=mech%3Agearbox_oak) - an omnidirectional hub: it passes power and spin on all six faces. Sources on different sides never jam, and an arm with no source of its own follows the nearest one. Split one input several ways, or turn a corner without a gear's counter-rotation. A wood-keyed frame block.
 - [**Clutch**](https://def9a2a4.github.io/defCoreLib-docs/item.html?id=mech%3Aclutch) - disconnects the line while it receives a redstone signal.
 - [**Reverser**](https://def9a2a4.github.io/defCoreLib-docs/item.html?id=mech%3Areverser) - flips spin direction on a redstone signal. Mostly useful for Rotators.
 - [**Ratchet**](https://def9a2a4.github.io/defCoreLib-docs/item.html?id=mech%3Aratchet) - a one-way rotation valve: it drives one direction and freewheels (disconnects) the other instead of jamming. Wrench to set the allowed direction.
@@ -39,7 +39,7 @@ reversers, and ratchets.
 
 - [**Millstone**](https://def9a2a4.github.io/defCoreLib-docs/item.html?id=mech%3Amillstone) - grinds items (e.g. cobblestone -> gravel -> sand, bone -> bone meal).
 - [**Extractor press**](https://def9a2a4.github.io/defCoreLib-docs/item.html?id=mech%3Apress) - presses items into juices and oils (consumes glass bottles).
-- [**Sieve**](https://def9a2a4.github.io/defCoreLib-docs/item.html?id=mech%3Asieve) - pans items from its storage when powered (needs water below) - sifts gravel and sand for nuggets, flint, and other finds.
+- [**Sieve**](https://def9a2a4.github.io/defCoreLib-docs/item.html?id=mech%3Asieve) - pans items from its storage when powered - sifts gravel, sand, red sand, dirt and soul sand for nuggets, flint, and other finds. It needs water in its own tank: right-click it with a water bucket or feed it by liquid pipe. Finds drop into a container below it.
 - [**Fan**](https://def9a2a4.github.io/defCoreLib-docs/item.html?id=mech%3Afan) - pushes entities and items away in a fixed ~5-block beam; surplus power pushes harder, not farther.
 - [**Drill**](https://def9a2a4.github.io/defCoreLib-docs/item.html?id=mech%3Adrill) - breaks the block in front of it in timed stages while powered. Mounted on a rotator it sweep-mines an arc at any angle, at 2x speed.
 - [**Placer**](https://def9a2a4.github.io/defCoreLib-docs/item.html?id=mech%3Aplacer) - places blocks from an attached inventory into the space in front of it.
@@ -57,9 +57,19 @@ These push a ship rather than the world, so they only do anything aboard a [Bloc
 - [**Large propeller**](https://def9a2a4.github.io/defCoreLib-docs/item.html?id=mech%3Alarge_propeller) - roughly three times a propeller's push for 10 power. Craft from a Large Windmill.
 - [**Huge propeller**](https://def9a2a4.github.io/defCoreLib-docs/item.html?id=mech%3Ahuge_propeller) - a serious investment at 20 power; enough on its own to fly a mid-sized hull. Craft from a Huge Windmill.
 - [**Thruster**](https://def9a2a4.github.io/defCoreLib-docs/item.html?id=mech%3Athruster) - burns fuel instead of drawing rotation power, so it works with no network at all. Craft from a Fan, four iron ingots, two blaze rods and a blast furnace.
-- [**Reaction wheel**](https://def9a2a4.github.io/defCoreLib-docs/item.html?id=mech%3Areaction_wheel) - a gyroscope: turns the ship and nothing else, whichever way it sits. The cheapest turning you can buy — 1 power against a propeller's 5 — and the only turning a floor mount can give you, since a floor propeller blows downward and lifts instead. It is *not* the most turning per unit of power: a huge propeller beats it, and a fuel-burning thruster on a wall draws no rotation power at all. Craft from two redstone, an iron block and a bearing.
+- [**Reaction wheel**](https://def9a2a4.github.io/defCoreLib-docs/item.html?id=mech%3Areaction_wheel) - a gyroscope: turns the ship and nothing else, whichever way it sits. The cheapest turning you can buy — 1 power against a propeller's 5 — and the only turning a floor mount can give you, since a propeller acts away from whatever it is mounted to — so a floor one blows upward and lifts rather than steering. It is *not* the most turning per unit of power: a huge propeller beats it, and a fuel-burning thruster on a wall draws no rotation power at all. Craft from two redstone, an iron block and a bearing.
 
 The three propeller tiers match the windmill they are crafted from — base, large and huge.
+
+### Wheels
+
+Wheels drive a ship on land. Mount them on the left or right side of the hull, so the axle points sideways; a wheel on the front or back face does nothing. A wheel takes power through the block it hangs on, so line up a shaft or engine with its axle. It draws power only while its vehicle is assembled: a placed wheel draws none and stays still. Powered wheels push the vehicle while they touch the ground, and unpowered ones still roll, so a sail cart works. Bigger wheels sit the hull higher and climb taller steps.
+
+Every wheel comes in all twelve plank woods, and the tyre is built from that wood's slabs. Craft a wheel from a rotator with four planks around it (top, bottom, left and right); the planks set the wood. Each bigger size is four planks of the same wood around the wheel one size down.
+
+- [**Wheel**](https://def9a2a4.github.io/defCoreLib-docs/item.html?id=mech%3Awheel_oak) - 1 block across; draws 2 power and climbs 1-block steps. Craft from a rotator and four planks.
+- [**Large wheel**](https://def9a2a4.github.io/defCoreLib-docs/item.html?id=mech%3Alarge_wheel_oak) - 2 blocks across; draws 5 power, climbs 1.5-block steps (fences and walls), and its tyre reaches half a block below the block it hangs on. Craft from a wheel and four planks of its wood.
+- [**Huge wheel**](https://def9a2a4.github.io/defCoreLib-docs/item.html?id=mech%3Ahuge_wheel_oak) - 3 blocks across; draws 10 power, climbs 2-block steps, and its tyre reaches a full block below the block it hangs on. Craft from a large wheel and four planks of its wood.
 
 Rotation power is all-or-nothing — an under-supplied network runs nothing — so split large propeller banks across separate networks rather than one that can brown out.
 
@@ -85,16 +95,35 @@ Rotation power is all-or-nothing — an under-supplied network runs nothing — 
 - **[DefCoreLib](https://github.com/def9a2a4/defCoreLib/blob/main/docs/readmes/defCoreLib.md)** is required.
 - Soft depend: [BetterBanners](https://github.com/def9a2a4/defCoreLib/blob/main/docs/readmes/bbanners.md) for **Large & Huge windmills** - without it, plain windmills still
   craft but the large/huge tiers are uncraftable.
+- Soft depend: [Pipes](https://github.com/def9a2a4/defCoreLib/blob/main/docs/readmes/pipes.md) for the **copper water pump**, whose recipe uses a copper pipe. Without
+  Pipes that one recipe is skipped silently; every other machine is unaffected.
+- Optional: [DynLight](https://github.com/def9a2a4/dynlight) makes torches, glowstone and other
+  light sources carried by a moving mechanism actually emit light. It is a scoreboard-tag
+  integration with no dependency either way — inert when DynLight is absent.
+
+## Commands
+
+| Command | Description | Permission |
+| --- | --- | --- |
+| `/mech advance <path\|*>` | Grant Mechanism advancements (testing) | `mech.admin` |
 
 ## Configuration
 
-- `rotation-config.yml` - network/structure size caps, machine tick rates, and the fuel & power
-  tables.
-- `mill-recipes.yml`, `press-recipes.yml` - millstone and press recipe definitions.
+Only fuel and burn rates can be changed. Create `plugins/DefCoreLib/config/fuel.yml` (it isn't
+generated for you) and copy into it any of these sections from the jar's `rotation-config.yml`:
+`fuel` (burn value per item), `engines` (burn-on-load, burn multiplier, idle smoke), `thruster`
+(burn multiplier), `steam` (boiler tank size and water use) and `load` (how each machine counts
+toward engine load). A section you leave out keeps the jar's values; a `fuel:` section replaces the
+whole fuel table, so list every fuel you want (logs and planks stay fuels regardless). Anything else
+in the file is ignored, and it is read once at server startup.
+
+Everything else - network and structure size caps, machine tick rates, the power table, and the
+`mill-recipes.yml` / `press-recipes.yml` / `sieve-recipes.yml` machine recipes - lives inside the
+DefCoreLib jar and is read only from there. A copy placed in `plugins/mech/` or `plugins/DefCoreLib/`
+is not read.
 
 ## Links
 
 - Items, recipes & showcases: https://def9a2a4.github.io/defCoreLib-docs/index.html?ns=mech
-- Download on Modrinth: https://modrinth.com/plugin/mechanism
 - Repository: https://github.com/def9a2a4/defCoreLib/
 - Issues: https://github.com/def9a2a4/defCoreLib/issues
